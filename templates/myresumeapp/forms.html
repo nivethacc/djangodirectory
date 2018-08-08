@@ -1,0 +1,26 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static "myresumeapp/css/frontpage.css" %}" type="text/css"/>
+<script src="{% static "myresumeapp/js/frontpage.js" %}"/></script>
+
+<title>{% block head_title %}Welcome{% endblock head_title %}</title>
+<body onload="javascript:openNav()">
+
+<div id="myNav" class="overlay">
+	<h2>WELCOME TO MY PERSONAL RESUME WEBSITE !!!</h2>
+	<h2>Dear Recruiter , Thanks a lot for showing interest in my Profile.</h2>
+	<h2>Please fill out your details to continue to my site.</h2>
+  
+  <div class="overlay-content">
+  	
+   <form method='POST'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+		<button type="submit" background="blue">Submit & Continue</button>
+	</form>
+  </div>
+</div>
+
+</body>
+
